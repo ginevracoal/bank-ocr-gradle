@@ -3,6 +3,7 @@ package test.bankocr;
 import bankocr.kata.CustomStringReader;
 import org.junit.Test;
 
+import java.lang.NullPointerException;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.StringReader;
@@ -32,6 +33,16 @@ public class BankOcrAcceptanceTest {
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
         assertThat(readFile[0], is(equalTo(" _ | ||_|")));
+
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void readFileNotFound() throws NullPointerException, FileNotFoundException, IOException {
+        CustomStringReader reader = new CustomStringReader();
+
+        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("Domajoi CaccaMerda");
+
+        String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
     }
 }

@@ -15,8 +15,7 @@ public class CustomStringReader {
             String line;
 
 
-            System.out.println("creato array");
-            //
+
             int j = 0;
             while( (line = reader.readLine()) != null ){
 
@@ -25,8 +24,9 @@ public class CustomStringReader {
                         rowAccount[i] = line.substring(i*3, (i+1)*3);
                     else
                         rowAccount[i] += line.substring(i*3, (i+1)*3);
-                    j++;
+
                 }
+                j++;
             }
             reader.close();
 

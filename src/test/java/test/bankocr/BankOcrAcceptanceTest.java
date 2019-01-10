@@ -45,4 +45,23 @@ public class BankOcrAcceptanceTest {
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
     }
+
+
+    @Test
+    public void readFileAllNineZeros() throws FileNotFoundException, IOException {
+
+        String [] testArray = new String[9];
+
+        for( int i = 0; i<9; i++)
+            testArray[i] = " _ | ||_|";
+
+        CustomStringReader reader = new CustomStringReader();
+
+        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
+
+        String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
+
+        assertArrayEquals(testArray, readFile);
+
+    }
 }

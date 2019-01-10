@@ -28,9 +28,51 @@ public class parsingTests {
         String zero = " _ "+
                       "| |"+
                       "|_|";
+
+
         String [] zeros = {zero,zero};
 
         assertThat(parser.parseArray(zeros),is(equalTo("00")));
+
+    }
+
+    @Test
+    public void readNAll()  {
+        StringParser parser = new StringParser();
+        String[] allNums = new String[] {
+                " _ "+
+                "| |"+
+                "|_|",
+                "  |"+
+                "  |"+
+                "  |",
+                " _ "+
+                " _|"+
+                "|_ ",
+                " _ "+
+                " _|"+
+                " _|",
+                "   "+
+                "|_|"+
+                "  |",
+                " _ "+
+                "|_ "+
+                " _|",
+                " _ "+
+                "|_ "+
+                "|_|",
+                " _ "+
+                "  |"+
+                "  |",
+                " _ "+
+                "|_|"+
+                "|_|",
+                " _ "+
+                "|_|"+
+                " _|"
+        };
+
+        assertThat(parser.parseArray(allNums),is(equalTo("0123456789")));
 
     }
 

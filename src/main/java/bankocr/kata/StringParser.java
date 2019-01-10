@@ -8,9 +8,36 @@ public class StringParser {
 
     public Integer parse(String stringNumber){
         Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
-            put(" _ "+
-                "| |"+
-                "|_|",0);
+            put(    " _ "+
+                    "| |"+
+                    "|_|",0);
+            put(    "  |"+
+                    "  |"+
+                    "  |",1);
+            put(    " _ "+
+                    " _|"+
+                    "|_ ",2);
+            put(    " _ "+
+                    " _|"+
+                    " _|",3);
+            put(    "   "+
+                    "|_|"+
+                    "  |",4);
+            put(    " _ "+
+                    "|_ "+
+                    " _|",5);
+            put(    " _ "+
+                    "|_ "+
+                    "|_|",6);
+            put(    " _ "+
+                    "  |"+
+                    "  |",7);
+            put(    " _ "+
+                    "|_|"+
+                    "|_|",8);
+            put(    " _ "+
+                    "|_|"+
+                    " _|",9);
         }};
         return numberMap.get(stringNumber);
     }

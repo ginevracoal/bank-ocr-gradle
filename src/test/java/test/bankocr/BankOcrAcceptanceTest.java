@@ -64,4 +64,22 @@ public class BankOcrAcceptanceTest {
         assertArrayEquals(testArray, readFile);
 
     }
+
+    @Test
+    public void readFileAllNineOnes() throws FileNotFoundException, IOException {
+
+        String [] testArray = new String[9];
+
+        for( int i = 0; i<9; i++)
+            testArray[i] = "     |  |";
+
+        CustomStringReader reader = new CustomStringReader();
+
+        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
+
+        String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
+
+        assertArrayEquals(testArray, readFile);
+
+    }
 }

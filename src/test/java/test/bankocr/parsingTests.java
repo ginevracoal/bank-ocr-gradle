@@ -13,25 +13,54 @@ import static org.junit.Assert.assertThat;
 public class parsingTests {
 
 
+
+
+    static private String[] allNums = new String[] {
+                    " _ "+
+                    "| |"+
+                    "|_|",
+                    "  |"+
+                    "  |"+
+                    "  |",
+                    " _ "+
+                    " _|"+
+                    "|_ ",
+                    " _ "+
+                    " _|"+
+                    " _|",
+                    "   "+
+                    "|_|"+
+                    "  |",
+                    " _ "+
+                    "|_ "+
+                    " _|",
+                    " _ "+
+                    "|_ "+
+                    "|_|",
+                    " _ "+
+                    "  |"+
+                    "  |",
+                    " _ "+
+                    "|_|"+
+                    "|_|",
+                    " _ "+
+                    "|_|"+
+                    " _|"
+    };
+
+    static private String strZero = allNums[0];
+
     @Test
     public void readZero()  {
         StringParser parser = new StringParser();
-        assertThat(parser.parse(" _ "+
-                                            "| |"+
-                                            "|_|"),is(equalTo(0)));
+        assertThat(parser.parse(strZero),is(equalTo(0)));
 
     }
 
     @Test
     public void readZeros()  {
         StringParser parser = new StringParser();
-        String zero = " _ "+
-                      "| |"+
-                      "|_|";
-
-
-        String [] zeros = {zero,zero};
-
+        String [] zeros = {strZero,strZero};
         assertThat(parser.parseArray(zeros),is(equalTo("00")));
 
     }
@@ -39,38 +68,7 @@ public class parsingTests {
     @Test
     public void readNAll()  {
         StringParser parser = new StringParser();
-        String[] allNums = new String[] {
-                " _ "+
-                "| |"+
-                "|_|",
-                "  |"+
-                "  |"+
-                "  |",
-                " _ "+
-                " _|"+
-                "|_ ",
-                " _ "+
-                " _|"+
-                " _|",
-                "   "+
-                "|_|"+
-                "  |",
-                " _ "+
-                "|_ "+
-                " _|",
-                " _ "+
-                "|_ "+
-                "|_|",
-                " _ "+
-                "  |"+
-                "  |",
-                " _ "+
-                "|_|"+
-                "|_|",
-                " _ "+
-                "|_|"+
-                " _|"
-        };
+
 
         assertThat(parser.parseArray(allNums),is(equalTo("0123456789")));
 

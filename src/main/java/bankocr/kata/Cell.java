@@ -1,10 +1,9 @@
 package bankocr.kata;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StringParser {
+public class Cell {
 
     private static Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
         put(    " _ "+
@@ -38,15 +37,16 @@ public class StringParser {
                 "|_|"+
                 " _|",9);
     }};
+    
+    
+    private int value;
 
-
-    public Integer parse(String stringNumber){
-
-        return numberMap.get(stringNumber);
+    public Cell(String stringNumber) {
+        value = numberMap.get(stringNumber);
     }
 
 
-    public String parseArray(String[] arrayStrings){
-        return Arrays.stream(arrayStrings).map(x -> parse(x).toString()).reduce("",String::concat);
+    public int toInt() {
+        return value;
     }
 }

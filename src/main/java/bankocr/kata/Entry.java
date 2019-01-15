@@ -6,6 +6,8 @@ public class Entry {
 
     public Entry(String[] rows) {}
 
-    public String parse() {}
+    public String toString() {
+        return "";
+    }
 
 }

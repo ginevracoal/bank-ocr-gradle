@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class Cell {
 
+    public static int DEFAULT_WIDTH = 3;
+    public static int DEFAULT_HEIGHT = 3;
     private static Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
         put(    " _ "+
                 "| |"+
@@ -40,6 +42,7 @@ public class Cell {
     
     
     private int value;
+
 
     public Cell(String stringNumber) {
         value = numberMap.get(stringNumber);

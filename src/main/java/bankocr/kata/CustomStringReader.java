@@ -20,9 +20,10 @@ public class CustomStringReader {
             //while a non-empty line is found, try getting string representation
             //of numbers out of lines
             while( (line = reader.readLine()) != null ){
-                //TODO replace magic numbers
+
                 for( int i=0; i<9; ++i ){
-                    rowAccount[i] += line.substring(i*3, (i+1)*3);
+                    rowAccount[i] += line.substring(i*Cell.DEFAULT_WIDTH,
+                            (i+1)*Cell.DEFAULT_WIDTH);
                 }
             }
             reader.close();

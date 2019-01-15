@@ -40,7 +40,7 @@ public class BankOcrAcceptanceTest {
     public void readFileNotFound() throws NullPointerException, FileNotFoundException, IOException {
         CustomStringReader reader = new CustomStringReader();
 
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("Domajoi CaccaMerda");
+        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("CosiAcaso");
 
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 

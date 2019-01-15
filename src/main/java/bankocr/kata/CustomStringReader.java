@@ -17,6 +17,7 @@ public class CustomStringReader {
 
 
             int j = 0;
+
             while( (line = reader.readLine()) != null ){
 
                 for( int i=0; i<9; ++i ){
@@ -37,10 +38,5 @@ public class CustomStringReader {
         }
 
         return rowAccount;
-
     }
-
-
-
-
 }

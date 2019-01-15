@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class Cell {
 
-    public static int DEFAULT_WIDTH = 3;
-    public static int DEFAULT_HEIGHT = 3;
-    private static Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
+    public static final int DEFAULT_WIDTH = 3;
+    public static final int DEFAULT_HEIGHT = 3;
+    private static final Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
         put(    " _ "+
                 "| |"+
                 "|_|",0);
-        put(    "  |"+
+        put(    "   "+
                 "  |"+
                 "  |",1);
         put(    " _ "+
@@ -48,8 +48,12 @@ public class Cell {
         value = numberMap.get(stringNumber);
     }
 
-
-    public int toInt() {
+    // TODO: remove toInt
+    public Integer toInt() {
         return value;
+    }
+
+    public String toString() {
+        return toInt().toString();
     }
 }

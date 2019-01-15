@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class StringParser {
 
-    private static Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
+    private static final Map<String,Integer> numberMap = new HashMap<String,Integer>(){{
         put(    " _ "+
                 "| |"+
                 "|_|",0);

@@ -14,9 +14,15 @@ import static org.junit.Assert.*;
 
 public class BankOcrAcceptanceTest {
 
+    private static CustomStringReader reader = new CustomStringReader();
+
+    private URL getResource(String resourceName){
+        return BankOcrAcceptanceTest.class.getClassLoader().getResource(resourceName);
+    }
+
     @Test
     public void parseFileWithSingleAllZeroEntryAndShowActualAccountNumberOnConsole() throws Exception {
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
+        URL allZerosSingleEntry = getResource("allZerosEntry");
         ApplicationRunner application = new ApplicationRunner();
 
         application.parseFile(allZerosSingleEntry);
@@ -26,9 +32,7 @@ public class BankOcrAcceptanceTest {
 
     @Test
     public void readFileAllZeros() throws FileNotFoundException, IOException {
-        CustomStringReader reader = new CustomStringReader();
-
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
+        URL allZerosSingleEntry = getResource("allZerosEntry");
 
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
@@ -38,9 +42,8 @@ public class BankOcrAcceptanceTest {
 
     @Test(expected = NullPointerException.class)
     public void readFileNotFound() throws NullPointerException, FileNotFoundException, IOException {
-        CustomStringReader reader = new CustomStringReader();
 
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("CosiAcaso");
+        URL allZerosSingleEntry = getResource("CosiAcaso");
 
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
@@ -55,9 +58,7 @@ public class BankOcrAcceptanceTest {
         for( int i = 0; i<9; i++)
             testArray[i] = " _ | ||_|";
 
-        CustomStringReader reader = new CustomStringReader();
-
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
+        URL allZerosSingleEntry = getResource("allZerosEntry");
 
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
@@ -73,13 +74,18 @@ public class BankOcrAcceptanceTest {
         for( int i = 0; i<9; i++)
             testArray[i] = "     |  |";
 
-        CustomStringReader reader = new CustomStringReader();
-
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
+        URL allZerosSingleEntry = getResource("allOnesEntry");
 
         String[] readFile = reader.readFile(allZerosSingleEntry.getFile());
 
         assertArrayEquals(testArray, readFile);
 
     }
+
+
+//    @Test
+//    public void readFileWithParameters() throws FileNotFoundException, IOException {
+//
+
+//    }
 }

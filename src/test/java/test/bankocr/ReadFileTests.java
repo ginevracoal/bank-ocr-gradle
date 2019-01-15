@@ -72,5 +72,9 @@ public class ReadFileTests {
     }
 
 
+    @Test
+    public void fileContentWithParameters() throws FileNotFoundException, IOException {
 
+
+    }
 }

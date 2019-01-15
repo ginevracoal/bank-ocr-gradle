@@ -1,13 +1,14 @@
 package bankocr.kata;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class CustomStringReader {
 
 
     public String[] readFile(String path){
-
-        String [] rowAccount = new String[9];
+        String[] rowAccount = new String[9];
+        Arrays.fill(rowAccount, "");
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(new File(path)));
@@ -16,18 +17,13 @@ public class CustomStringReader {
 
 
 
-            int j = 0;
-
+            //while a non-empty line is found, try getting string representation
+            //of numbers out of lines
             while( (line = reader.readLine()) != null ){
-
+                //TODO replace magic numbers
                 for( int i=0; i<9; ++i ){
-                    if( j == 0 )
-                        rowAccount[i] = line.substring(i*3, (i+1)*3);
-                    else
-                        rowAccount[i] += line.substring(i*3, (i+1)*3);
-
+                    rowAccount[i] += line.substring(i*3, (i+1)*3);
                 }
-                j++;
             }
             reader.close();
 

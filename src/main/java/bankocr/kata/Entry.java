@@ -1,13 +1,25 @@
 package bankocr.kata;
 
+
+import java.util.Arrays;
+
 public class Entry {
 
     private Cell[] entry;
 
-    public Entry(String[] rows) {}
+    public Entry(String[] rows) {
+        String[] cellString = new String[9];
+        Arrays.fill(cellString, "");
 
-        entry = Arrays.stream(cellString).map(x->new Cell(x))
-                .toArray(Cell[]::new);
+        for (String line:rows) {
+            for (int i = 0; i < 9; ++i) {
+                cellString[i] += line.substring(i * Cell.DEFAULT_WIDTH,
+                                                (i + 1) * Cell.DEFAULT_WIDTH);
+            }
+        }
+
+        entry = Arrays.stream(cellString).map(Cell::new)
+                                         .toArray(Cell[]::new);
     }
 
     public Cell[] getCells(){
@@ -27,13 +39,7 @@ public class Entry {
         return Arrays.hashCode(entry);
     }
 
-//    public String toString() {
-        Cell zeroCell = new Cell(
-                " _ "+
-                            "| |"+
-                            "|_|");
-                Cell[] entry = {zeroCell,zeroCell,zeroCell,zeroCell,zeroCell,zeroCell,zeroCell,zeroCell,zeroCell};
+    public String toString() {
         return Arrays.stream(entry).map(Cell::toString).reduce("", String::concat);
     }
-
 }

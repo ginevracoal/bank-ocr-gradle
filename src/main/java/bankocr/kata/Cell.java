@@ -2,6 +2,7 @@ package bankocr.kata;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Cell {
 
@@ -51,6 +52,19 @@ public class Cell {
     // TODO: remove toInt
     public Integer toInt() {
         return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cell cell = (Cell) o;
+        return value == cell.value;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
 
     public String toString() {

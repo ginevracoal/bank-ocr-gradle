@@ -17,34 +17,34 @@ import static org.junit.Assert.assertThat;
 public class EntryTest {
 
     static private String[] allNums = new String[] {
-            " _ "+
+                    " _ "+
                     "| |"+
                     "|_|",
-            "   "+
+                    "   "+
                     "  |"+
                     "  |",
-            " _ "+
+                    " _ "+
                     " _|"+
                     "|_ ",
-            " _ "+
+                    " _ "+
                     " _|"+
                     " _|",
-            "   "+
+                    "   "+
                     "|_|"+
                     "  |",
-            " _ "+
+                    " _ "+
                     "|_ "+
                     " _|",
-            " _ "+
+                    " _ "+
                     "|_ "+
                     "|_|",
-            " _ "+
+                    " _ "+
                     "  |"+
                     "  |",
-            " _ "+
+                    " _ "+
                     "|_|"+
                     "|_|",
-            " _ "+
+                    " _ "+
                     "|_|"+
                     " _|"
     };
@@ -53,17 +53,16 @@ public class EntryTest {
     public void entryAllOnes(){
         String[] rowsAllOnes = {
                         "                           ",
-                        "  |  |  |  |  |  |  |  |  |" ,
+                        "  |  |  |  |  |  |  |  |  |",
                         "  |  |  |  |  |  |  |  |  |"
         };
         Entry entry = new Entry(rowsAllOnes);
         Cell[] arrayCellAllOnes = new Cell[9];
         Arrays.fill(arrayCellAllOnes, new Cell("   " +
-                                                            "  |" +
-                                                            "  |"));
+                                                           "  |" +
+                                                           "  |"));
 
         assertThat(entry.getCells(), is(equalTo(arrayCellAllOnes)));
-
     }
 
 

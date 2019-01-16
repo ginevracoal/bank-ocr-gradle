@@ -3,7 +3,7 @@ package bankocr.kata;
 import java.io.*;
 import java.util.Arrays;
 
-public class CustomStringReader {
+public class EntryReader {
 
 
     public String[] readFile(String path){

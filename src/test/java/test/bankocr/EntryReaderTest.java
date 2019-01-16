@@ -1,19 +1,18 @@
 package test.bankocr;
 
-import bankocr.kata.CustomStringReader;
+import bankocr.kata.EntryReader;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URL;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertThat;
 
-public class ReadFileTests {
+public class EntryReaderTest {
 
-    private static CustomStringReader reader = new CustomStringReader();
+    private static EntryReader reader = new EntryReader();
 
     private String[] getStringDigitsFromResource(String resourceName){
         String fileName = BankOcrAcceptanceTest.class.getClassLoader().getResource(resourceName).getFile();

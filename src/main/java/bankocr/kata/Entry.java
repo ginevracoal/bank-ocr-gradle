@@ -45,13 +45,12 @@ public class Entry {
 
     public boolean validate(){
 
-        //int[] positions = Arrays.stream(entryString.split("")).mapToInt(Integer::parseInt).collect();
-        /*int[] weights = ;
-        if(array.dotProduct())
-            return true;
-        else
-            return false;*/
-        return true;
+        // TODO still have to implement the print for false case
+        int dotProduct = 0;
+        for(int i = entry.length; i > 0; i--){
+            dotProduct += entry[entry.length-i].toInt()*i;
+        }
+        return dotProduct % 11 == 0;
     }
 
 }

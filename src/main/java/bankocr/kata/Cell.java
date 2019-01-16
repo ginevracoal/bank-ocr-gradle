@@ -49,8 +49,7 @@ public class Cell {
         value = numberMap.get(stringNumber);
     }
 
-    // TODO: remove toInt
-    public Integer toInt() {
+    public int toInt() {
         return value;
     }
 
@@ -68,6 +67,6 @@ public class Cell {
     }
 
     public String toString() {
-        return toInt().toString();
+        return "" + toInt();
     }
 }

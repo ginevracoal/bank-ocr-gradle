@@ -2,6 +2,7 @@ package test.bankocr;
 
 import bankocr.kata.Cell;
 import bankocr.kata.Entry;
+import bankocr.kata.StringParser;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -57,7 +58,7 @@ public class EntryTest {
                         "  |  |  |  |  |  |  |  |  |"
         };
         Entry entry = new Entry(rowsAllOnes);
-        Cell[] arrayCellAllOnes = new Cell[9];
+        Cell[] arrayCellAllOnes = new Cell[Entry.DEFAULT_LENGTH];
         Arrays.fill(arrayCellAllOnes, new Cell("   " +
                                                            "  |" +
                                                            "  |"));
@@ -69,20 +70,10 @@ public class EntryTest {
     @Test
     public void readZeros()  {
         String [] zeros = {
-                " _ ".repeat(9),
-                "| |".repeat(9),
-                "|_|".repeat(9)};
+                " _ ".repeat(Entry.DEFAULT_LENGTH),
+                "| |".repeat(Entry.DEFAULT_LENGTH),
+                "|_|".repeat(Entry.DEFAULT_LENGTH)};
         Entry myentry = new Entry(zeros);
-        assertThat(myentry.toString(),is(equalTo("0".repeat(9))));
+        assertThat(myentry.toString(),is(equalTo("0".repeat(Entry.DEFAULT_LENGTH))));
     }
-/*
-    @Test
-    public void readNAll()  {
-        StringParser parser = new StringParser();
-
-
-        assertThat(parser.parseArray(allNums),is(equalTo("0123456789")));
-
-    }*/
-
 }

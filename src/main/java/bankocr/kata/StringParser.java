@@ -41,7 +41,6 @@ public class StringParser {
 
 
     public Integer parse(String stringNumber){
-
         return numberMap.get(stringNumber);
     }
 

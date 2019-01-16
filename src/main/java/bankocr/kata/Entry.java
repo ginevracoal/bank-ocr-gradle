@@ -6,13 +6,14 @@ import java.util.Arrays;
 public class Entry {
 
     private Cell[] entry;
+    public static final int DEFAULT_LENGTH = 9;
 
     public Entry(String[] rows) {
         String[] cellString = new String[9];
         Arrays.fill(cellString, "");
 
         for (String line:rows) {
-            for (int i = 0; i < 9; ++i) {
+            for (int i = 0; i < DEFAULT_LENGTH; ++i) {
                 cellString[i] += line.substring(i * Cell.DEFAULT_WIDTH,
                                                 (i + 1) * Cell.DEFAULT_WIDTH);
             }
@@ -42,4 +43,5 @@ public class Entry {
     public String toString() {
         return Arrays.stream(entry).map(Cell::toString).reduce("", String::concat);
     }
+
 }

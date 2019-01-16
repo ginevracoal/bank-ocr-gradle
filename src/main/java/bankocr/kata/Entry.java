@@ -1,6 +1,5 @@
 package bankocr.kata;
 
-
 import java.util.Arrays;
 
 public class Entry {
@@ -42,6 +41,17 @@ public class Entry {
 
     public String toString() {
         return Arrays.stream(entry).map(Cell::toString).reduce("", String::concat);
+    }
+
+    public boolean validate(){
+
+        //int[] positions = Arrays.stream(entryString.split("")).mapToInt(Integer::parseInt).collect();
+        /*int[] weights = ;
+        if(array.dotProduct())
+            return true;
+        else
+            return false;*/
+        return true;
     }
 
 }

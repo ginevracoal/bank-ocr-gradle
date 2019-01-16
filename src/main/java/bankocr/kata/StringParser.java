@@ -10,7 +10,7 @@ public class StringParser {
         put(    " _ "+
                 "| |"+
                 "|_|",0);
-        put(    "  |"+
+        put(    "   "+
                 "  |"+
                 "  |",1);
         put(    " _ "+
